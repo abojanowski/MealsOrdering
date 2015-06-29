@@ -14,6 +14,15 @@ class MealTest < ActiveSupport::TestCase
   	assert_not duplicate_meal.valid?
   end	
 
+  test "Meal validation should eject valid burger name" do
+    valid_name = %w[Sport Burger, Fit Burger, Big Burger, Roasted Burger]
+
+    valid_name.each do |v|
+      @meal.name = v
+      assert @meal.valid?, "#{v.inspect} should be valid"
+    end
+  end
+
   test "Meal validation should reject invalid burger name" do
   	invalid_name = %w[1burger, burger]
 
