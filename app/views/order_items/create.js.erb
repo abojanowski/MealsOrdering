@@ -1,0 +1,10 @@
+<% if @order.errors.any? || @order_item.errors.any? %>
+alert("not valid.")
+<% else %>
+	<% if @order.order_items(:reload).count <= 2 %>
+  	$(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
+  <% else %>
+  	<% @order.order_items.last.destroy %>
+		alert("You can't add more than two positions.")
+	<% end %>  	
+<% end %>

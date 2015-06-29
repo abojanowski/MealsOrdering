@@ -1,0 +1,21 @@
+<% provide(:title, "Check Orders") %>
+
+<div class="container">
+  <h3>Orders</h3>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th class="orderNumber">Order No</th>
+      <th>Total</th>
+      <th>Order Status</th>
+      <td class="status">&nbsp;</td>
+    </tr>
+    <% @orders.each do |order| %>
+      <tr>
+        <td class="orderNumber"><%= order.id %>.</td>
+        <td><%= number_to_currency order.subtotal %></td>
+        <td><%= order.status %></td>
+        <td class="status"><%= link_to "Change delivery status", edit_order_path(order), class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

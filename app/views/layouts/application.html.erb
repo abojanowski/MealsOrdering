@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %> | Burger Meals</title>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% if request.ssl? %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+  <% else %> 
+    <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+  <% end %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-2">
+        <h1 class="head"><%= link_to "Meals", root_path %></h1>
+      </div>
+      <div class="col-xs-3 pull-right text-right">
+        <% if current_user %>
+          <div class="log">
+            <span><%= image_tag current_user.image_url, alt: current_user.name %></span>
+            <span><%= link_to 'Log Out', logout_path, method: :delete %></span>
+          </div>  
+        <% else %> 
+          <div class="log">      
+            <span><%= link_to 'Log in', '/auth/facebook' %></span>
+          </div>
+        <% end %>     
+      </div>
+    </div>
+    
+    <hr>
+    
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+
+    <% if logged_in? %>
+      <div class="text-right">
+        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+      </div>
+    <% end %>
+    
+
+
+    <%= yield %>
+  </div>
+
+</body>
+</html>

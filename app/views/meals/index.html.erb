@@ -1,0 +1,29 @@
+<% provide(:title, "Home") %>
+
+<div class="container welcome">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-1">
+      <% if current_user %>    
+          <h2 = "hello"> Tasty Burgers .. try two diffrent! </h2>
+          <span><%= link_to 'or check orders history ', '/orders' %></span>
+        <% else %> 
+          <h2 = "hello"> Hello in Burger Meals </h2>
+          <p> If you want order meal </p>      
+          <span><%= link_to 'Log in', '/auth/facebook' %></span>
+        <% end %> 
+    </div>
+    <div class="col-xs-2">
+      <img src="https://www.dropbox.com/s/26iiveyjoxmorsi/Salat.png?raw=1">
+    </div>  
+  </div>
+</div>
+
+<h3 class="text-center">Meals</h3>
+
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1">
+    <% @meals.each do |meal| %>
+      <%= render "meals_row", meal: meal, order_item: @order_item %>
+    <% end %>
+  </div>
+</div>

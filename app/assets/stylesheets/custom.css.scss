@@ -1,0 +1,83 @@
+@import url(http://fonts.googleapis.com/css?family=Paytone+One);
+@import url(http://fonts.googleapis.com/css?family=Muli);
+
+
+body {
+	font-family: 'Muli', sans-serif;
+	 font-weight: 600;
+}
+
+.row{
+	.head {
+		font-family: 'Paytone One', sans-serif;
+		font-size: 3em;
+	}
+}
+
+.log {
+	position:relative;
+	margin-top: 15px;
+	/*background-color: red;*/
+	height:50px;
+	span {
+		padding-left: 5px;
+		font-size: 1.4em;
+		vertical-align: bottom;	
+		/*background-color: red;*/
+	}
+}
+
+.cart-text {
+	margin-top: 0px;
+}
+
+.welcome {
+	height: 300px;
+	width: 100%;
+	background-color: #F5F5F5;
+	border-radius: 3px;
+	border: 1px solid #E3E3E3;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	span {
+		padding-left: 10px;
+		padding-right: 10px;
+		border: solid 2px #E3E3E3; 
+		border-radius: 15px;
+		font-size: 1.2em;
+	}
+}
+
+h3 {
+	font-size: 2.5em;
+	/*border-bottom:1px solid #E3E3E3;*/
+	/*padding-bottom: 10px;*/
+	margin-bottom: 20px;
+}
+
+.row {
+	.well {
+		background-color: white;
+	}
+}
+
+.col-xs-2 {
+	img {
+		margin-left: 40px;
+		margin-top: 10px;
+		height: 280px;
+		/*background-color: red;*/
+	}
+}
+
+/*orders*/
+
+table {
+	.orderNumber {
+		width: 10%;
+	}
+	.status {
+		width:20%;
+		text-align: center;
+	}
+}
