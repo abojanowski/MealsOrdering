@@ -10,6 +10,7 @@ class SessionsControllerTest < ActionController::TestCase
 
 	test "should create authentication" do
 		# log_in_user(:identity)
+		# debugger
 		assert_difference('User.count') do
 			get :create, :provider => "identity"
 		end
@@ -22,11 +23,8 @@ class SessionsControllerTest < ActionController::TestCase
 		get :create, :provider => "identity"
 		user = User.last
 		assert_equal session[:user_id], user.id
-	end
-
-	test "should destroy session" do
-		get :destroy
+		# get :destroy
+		log_out_user(user.id)
 		assert_equal session[:user_id], nil
 	end
-
 end

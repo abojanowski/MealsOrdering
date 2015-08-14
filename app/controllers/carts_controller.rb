@@ -4,7 +4,6 @@ class CartsController < ApplicationController
   end
 
   def checkout	 	
- 		session.delete(:order_id)
-  	redirect_to orders_path
+ 		@order_form = OrderForm.new user: User.new
   end
 end

@@ -5,7 +5,7 @@
     <div class="col-xs-6 col-xs-offset-1">
       <% if current_user %>    
           <h2 = "hello"> Tasty Burgers .. try two diffrent! </h2>
-          <span><%= link_to 'or check orders history ', '/orders' %></span>
+          <span><%= link_to 'or check orders history ', orders_path %></span>
         <% else %> 
           <h2 = "hello"> Hello in Burger Meals </h2>
           <p> If you want order meal </p>      

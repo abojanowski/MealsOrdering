@@ -14,6 +14,8 @@ gem 'sdoc', 									 '~> 0.4.0', group: :doc
 gem 'omniauth-facebook'
 gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
+gem 'country_select'
+gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
