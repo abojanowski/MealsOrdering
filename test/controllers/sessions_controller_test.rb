@@ -6,6 +6,7 @@ class SessionsControllerTest < ActionController::TestCase
 
 	def setup 
 		request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:identity]
+		debugger
 	end
 
 	test "should create authentication" do

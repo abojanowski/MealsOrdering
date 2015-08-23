@@ -4,6 +4,8 @@ class CartsController < ApplicationController
   end
 
   def checkout	 	
- 		@order_form = OrderForm.new user: User.new
+ 		@order = current_order
+ 		@order.update_attributes(subtotal: current_order.subtotal, user_id: current_user.id)
+ 		@user = current_user
   end
 end

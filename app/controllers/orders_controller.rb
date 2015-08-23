@@ -8,6 +8,9 @@ class OrdersController < ApplicationController
     @statuses = Order.statuses
   end
 
+  def create
+  end
+
   def update
   	@order = Order.find(params[:id])
     @statuses = Order.statuses
@@ -21,7 +24,13 @@ class OrdersController < ApplicationController
   
 	private
   
-  def order_params
-    params.require(:order).permit(:subtotal, :status)
-  end
+    def order_params
+      params.require(:order).permit(:subtotal, :status)
+    end
+
+    # def order_params
+    #   params.require(:order).permit(:subtotal, :status,
+    #     user: [:name, :email]
+    #     )
+    # end
 end

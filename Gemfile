@@ -11,11 +11,11 @@ gem 'jbuilder', 							 '~> 2.0'
 
 gem 'sdoc', 									 '~> 0.4.0', group: :doc
 
+  #new
+
 gem 'omniauth-facebook'
 gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
-gem 'country_select'
-gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
@@ -25,9 +25,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'minitest-reporters', '1.0.5'
-  gem 'mini_backtrace',     '0.1.3'
-  gem 'guard-minitest',     '2.3.1'
+  gem 'minitest-reporters',             '1.0.5'
+  gem 'mini_backtrace',                 '0.1.3'
+  gem 'guard-minitest',                 '2.3.1'
 end
 
 group :production do
