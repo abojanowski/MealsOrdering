@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     get :checkout
   end
   resources :order_items, only: [:create, :update, :destroy]
-  resources :orders
+  resources :orders, only: [:index, :edit, :create, :update]
+  resources :order_forms
   
   root to:  "meals#index"
   

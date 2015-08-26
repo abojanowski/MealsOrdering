@@ -4,7 +4,8 @@ class CartsController < ApplicationController
   end
 
   def checkout	 	
- 		session.delete(:order_id)
-  	redirect_to orders_path
+ 		@order = current_order
+ 		@order.update_attributes(subtotal: current_order.subtotal, user_id: current_user.id)
+ 		@user = current_user
   end
 end

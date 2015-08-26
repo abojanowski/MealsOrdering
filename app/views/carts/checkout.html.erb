@@ -1,0 +1,9 @@
+<h1> Checkout </h1>
+
+<%= form_for @user, url: order_form_path(@user) do |f| %>
+ <h3>Some of your personal details</h3>
+ 	<p><%= f.text_field :name, placeholder: "#{current_user.name}", class: "form-control" %></p>
+ 	<p><%= f.email_field :email, placeholder: "Email", class: "form-control" %></p>  
+ 	<p><%= f.submit "Send Order", class: "btn btn-primary" %>
+<% end %>
+
